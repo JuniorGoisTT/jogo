@@ -1,10 +1,33 @@
 import random
 
+def selecionar_dificuldade():
+    print("Selecione o nível de dificuldade:")
+    print("1 - Fácil (número entre 1 e 50, tentativas ilimitadas)")
+    print("2 - Médio (número entre 1 e 100, máximo de 10 tentativas)")
+    print("3 - Difícil (número entre 1 e 200, máximo de 7 tentativas)")
+    
+    while True:
+        escolha = input("Escolha o nível (1, 2 ou 3): ")
+        if escolha in ["1", "2", "3"]:
+            return int(escolha)
+        print("Escolha inválida. Por favor, digite 1, 2 ou 3.")
+
+def configurar_jogo(dificuldade):
+    if dificuldade == 1:
+        return 50, None  # Intervalo de 1 a 50, tentativas ilimitadas
+    elif dificuldade == 2:
+        return 100, 10  # Intervalo de 1 a 100, máximo de 10 tentativas
+    elif dificuldade == 3:
+        return 200, 7  # Intervalo de 1 a 200, máximo de 7 tentativas
+
 def jogo_adivinhe_o_numero():
     print("Bem-vindo ao jogo 'Adivinhe o Número'!")
-    print("Estou pensando em um número entre 1 e 100.")
     
-    numero_secreto = random.randint(1, 100)
+    dificuldade = selecionar_dificuldade()
+    intervalo, max_tentativas = configurar_jogo(dificuldade)
+    numero_secreto = random.randint(1, intervalo)
+    
+    print(f"Estou pensando em um número entre 1 e {intervalo}.")
     tentativas = 0
     
     while True:
@@ -27,6 +50,10 @@ def jogo_adivinhe_o_numero():
             print("Muito alto! Tente novamente.")
         else:
             print(f"Parabéns! Você adivinhou o número em {tentativas} tentativas.")
+            break
+        
+        if max_tentativas and tentativas >= max_tentativas:
+            print(f"Você excedeu o número máximo de {max_tentativas} tentativas. O número era {numero_secreto}.")
             break
 
 if __name__ == "__main__":

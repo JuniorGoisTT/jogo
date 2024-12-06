@@ -17,4 +17,4 @@ Este é um jogo simples de terminal onde o jogador tenta adivinhar um número al
 1. Certifique-se de ter o Python instalado no seu computador.
 2. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/JuniorGoisTT/jogo/blob/main/adivinheonumero.py

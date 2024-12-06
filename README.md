@@ -18,3 +18,10 @@ Este é um jogo simples de terminal onde o jogador tenta adivinhar um número al
 2. Clone este repositório:
    ```bash
    git clone https://github.com/JuniorGoisTT/jogo/blob/main/adivinheonumero.py
+---
+
+### Níveis de Dificuldade
+O jogo agora oferece três níveis de dificuldade:
+1. **Fácil**: Número entre 1 e 50, tentativas ilimitadas.
+2. **Médio**: Número entre 1 e 100, máximo de 10 tentativas.
+3. **Difícil**: Número entre 1 e 200, máximo de 7 tentativas.
